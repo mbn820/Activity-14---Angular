@@ -1,0 +1,33 @@
+<h1>Manage Roles</h1>
+
+<table>
+  <tr>
+    <th colspan="5">
+      Filter: <input [(ngModel)]="filterBy" type="text">
+    </th>
+  </tr>
+  <tr>
+    <th (click)="sortById()">ID</th>
+    <th (click)="sortByRoleName()">ROLE</th>
+    <th>PERSONS</th>
+    <th>UPDATE</th>
+    <th>DELETE</th>
+  </tr>
+  <tr *ngFor="let role of roles | filter : filterBy">
+    <td align="center">{{ role.id }}</td>
+    <td><span class="pseudolink" (click)="showRolesDetails(role.id)">{{ role.roleName }}</span></td>
+    <td>
+      <p *ngFor="let person of role.persons">- {{ person.name.firstName }} {{ person.name.middleName[0] }}. {{ person.name.lastName }}</p>
+    </td>
+    <td align="center"><button class="btn-update" (click)="updateRole(role.id, role.roleName)">Update</button></td>
+    <td align="center"><button class="btn-delete" (click)="deleteRole(role.id)">Delete</button></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="5">
+      <button class="btn-add" (click)="addRole()">Add New Role</button>
+    </td>
+  </tr>
+</table>
+
+
+
