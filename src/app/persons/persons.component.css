@@ -1,0 +1,17 @@
+.card {
+    background-color: #111823;
+    box-shadow: 0 4px 8px 0 gray;
+    border-radius: 4px;
+}
+
+.cardContent {
+    margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    color: lightslategray;
+}
+
+.cardsContainer {
+    padding-left : 200px;
+    padding-right : 200px;
+}

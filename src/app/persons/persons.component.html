@@ -1,1 +1,15 @@
 <h1>Manage Persons</h1>
+
+<div class="cardsContainer">
+    <div *ngFor="let person of persons" class="card" align="left">
+        <div class="cardContent">
+            <h3 class="pseudolink">
+                {{ person.name.firstName }} {{ person.name.middleName[0] }}. {{ person.name.lastName }}
+            </h3>
+            <p>{{ person.address.streetNumber }} Street, {{ person.address.barangay }}, {{ person.address.municipality }}, {{ person.address.zipcode }}</p>
+            <p>Hired on {{ person.dateHired | date}}</p>
+            <button class="btn-update">Update</button>
+            <button class="btn-delete" (click)="deletePerson(person.id)">Delete</button>
+        </div>
+    </div>
+</div>
